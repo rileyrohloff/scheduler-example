@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ $.Chart.Name }}
+spec:
+  schedule: "{{ .Values.cronJob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: "{{ $.Chart.Name }}-cron"
+            image: "{{ $.Values.image.name }}:{{ $.Values.image.tag }}"
+            imagePullPolicy: Never
+            {{ if .Values.command }}
+            command:
+              {{ .Values.command.args }}
+            {{ end }}
+          restartPolicy: Never
