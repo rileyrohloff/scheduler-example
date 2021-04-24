@@ -1,7 +1,7 @@
 image:
   name: scheduler-example
   tag: "1.0"
-  # just using local dockerenv for this example. Set this to 'Always' in prod
+  # just using local dockerenv for this example. Set this to 'Always' in if you published your image to a registry
   policy: Never
 
 

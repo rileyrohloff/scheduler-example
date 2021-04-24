@@ -6,6 +6,7 @@ import sys
 
 if __name__ == '__main__':
     # obviously this isn't triggering anything, but this an example of hitting an API endpoint
+    # that would kick off a downstream process. Think publishing to kafka, or kicking off another sequence.
     args = sys.argv
     print(args)
     try:

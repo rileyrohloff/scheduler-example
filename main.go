@@ -31,6 +31,7 @@ func main() {
 			createTriggerJob(client, i)
 		}
 	}
+	// debug inside of container
 	time.Sleep(20 * time.Second)
 }
 
